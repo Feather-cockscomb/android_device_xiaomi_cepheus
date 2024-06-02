@@ -1,59 +1,32 @@
-# android_device_xiaomi_cepheus
-For building TWRP for Xiaomi Mi 9
+# Device tree for Xiaomi Mi 9 (codenamed _"cepheus"_)
 
-TWRP device tree for Xiaomi Mi 9
+Device configuration for Xiaomi Mi 9
+=========================================
 
-## Features
+The Xiaomi Mi 9 (codenamed _"cepheus"_) is a high-end smartphone from Xiaomi.
 
-Works:
+It was announced in February 2019. Release date was in March 2019.
 
-- ADB
-- Decryption of /data
-- Screen brightness settings
-- Correct screenshot color
-- MTP
-- Flashing (opengapps, roms, images and so on)
-- Backup/Restore (Needs more testing)
-- USB OTG
-- Android Q Support
+## Device specifications
 
-TO-DO:
+Basic   | Spec Sheet
+-------:|:-------------------------
+CPU     | Octa-core (1x2.84 GHz Kryo 485 & 3x2.42GHz Kryo 485 & 4x1.8GHz Kryo 485)
+Chipset | Qualcomm SDM855 Snapdragon 855
+GPU     | Adreno 640
+Memory  | 6/8 GB RAM
+Shipped Android Version | 9.0
+Storage | 64/128/256 GB (UFS 2.1)
+Battery | Non-removable Li-Po 3300 mAh
+Display | 1080 x 2340 pixels, 6.39 inches (~428 ppi pixel density)
+Camera  | 48MP(Primary),12MP(Telephoto), 16MP(Ultrawide), dual-LED (dual tone) flash, 20MP(Selfie)
 
-- Vibration support
+## Device picture
+![Xiaomi Mi 9](https://raw.githubusercontent.com/PixelExperience/official_devices/master/images/.thumbs/300/cepheus.png)
 
 ## Compile
 
-First checkout minimal twrp with omnirom tree:
-
+Lunch command :
 ```
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-repo sync
+lunch twrp_cepheus-eng && mka recoveryimage
 ```
-
-Then add these projects to .repo/manifest.xml:
-
-```xml
-<project path="device/xiaomi/cepheus" name="mauronofrio/android_device_xiaomi_cepheus" remote="github" revision="android-9.0" />
-```
-
-Finally execute these:
-
-```
-. build/envsetup.sh
-lunch omni_cepheus-eng
-mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-```
-
-To test it:
-
-```
-fastboot boot out/target/product/cepheus/recovery.img
-```
-
-## Other Sources
-
-https://github.com/LasagnaTeam/TWRP_Kernel_Cepheus
-
-## Thanks
-
-- Thanks to @PeterCxy for the commits and the base: https://github.com/PeterCxy/android_device_xiaomi_violet-twrp
