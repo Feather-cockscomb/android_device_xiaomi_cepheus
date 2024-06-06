@@ -13,23 +13,23 @@
 /metadata        ext4     /dev/block/bootdevice/by-name/metadata                         flags=backup=1;wipeingui
 
 # DTBo
-/dtbo            emmc     /dev/block/bootdevice/by-name/dtbo                             flags=display="DTBo";backup=1;flashimg=1
+/dtbo            emmc     /dev/block/bootdevice/by-name/dtbo                             flags=display="dtbo";backup=1;flashimg=1
 
 # System Partitions
-/system		     ext4     system                                                         flags=display="System";logical
-/system		     erofs    system                                                         flags=display="System";logical
-/vendor		     ext4     vendor                                                         flags=display="Vendor";logical
-/vendor		     erofs    vendor                                                         flags=display="Vendor";logical
-/product	     ext4     product                                                        flags=display="Product";logical
-/product	     erofs    product                                                        flags=display="Product";logical
-/system_ext	     ext4     system_ext                                                     flags=display="System_EXT";logical
-/system_ext	     erofs    system_ext                                                     flags=display="System_EXT";logical
-/odm		     ext4     odm                                                            flags=display="ODM";logical
-/odm		     erofs    odm                                                            flags=display="ODM";logical
+/system		     ext4     system                                                         flags=display="system";logical
+/system		     erofs    system                                                         flags=display="system";logical
+/vendor		     ext4     vendor                                                         flags=display="vendor";logical
+/vendor		     erofs    vendor                                                         flags=display="vendor";logical
+/product	     ext4     product                                                        flags=display="product";logical
+/product	     erofs    product                                                        flags=display="product";logical
+/system_ext	     ext4     system_ext                                                     flags=display="system_ext";logical
+/system_ext	     erofs    system_ext                                                     flags=display="system_ext";logical
+/odm		     ext4     odm                                                            flags=display="odm";logical
+/odm		     erofs    odm                                                            flags=display="odm";logical
 # System Partitions (Image)
 /system_image    emmc     /dev/block/bootdevice/by-name/system                           flags=backup=1;flashimg=1
 /vendor_image    emmc     /dev/block/bootdevice/by-name/vendor                           flags=backup=1;flashimg=1
-/cust_image      emmc     /dev/block/bootdevice/by-name/cust                             flags=display="Cust Image";backup=1;flashimg=1
+/cust_image      emmc     /dev/block/bootdevice/by-name/cust                             flags=display="cust Image";backup=1;flashimg=1
 
 # Modem
 /firmware        vfat     /dev/block/bootdevice/by-name/modem                            flags=display="Firmware";mounttodecrypt
