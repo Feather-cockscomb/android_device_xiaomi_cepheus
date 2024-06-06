@@ -60,3 +60,4 @@
 
 # System As Root (Needed for non-retrofit convert to retrofit)
 /system_root     ext4     /dev/block/bootdevice/by-name/system                           flags=display="System_Root"
+/system_root     erofs     /dev/block/bootdevice/by-name/system                          flags=display="System_Root"
