@@ -18,13 +18,14 @@
 # 	Please maintain this if you use this script or any part of it
 #
 FDEVICE="cepheus"
-FOX_BUILD_DEVICE ="$ FDEVICE"
+FOX_BUILD_DEVICE="$FDEVICE"
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 	export OF_STATUS_INDENT_LEFT="48"
 	export OF_STATUS_INDENT_RIGHT="48"
 	export OF_SCREEN_H=2340
+	export TARGET_DEVICE_ALT="cepheus"
 	export OF_PATCH_AVB20=1
    	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
    	export OF_USE_MAGISKBOOT="1"
@@ -60,7 +61,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     # -- end R11 settings --
 
     # Maintainer Stuff
-    export OF_MAINTAINER="Xirudly"
+    export OF_MAINTAINER="partitions"
     export FOX_VERSION="R12.1_0"
 
     # run a process after formatting data to recreate /data/media/0
@@ -68,10 +69,10 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     # ensure that /sdcard is bind-unmounted before f2fs data repair or format
     export OF_UNBIND_SDCARD_F2FS=1
-
+    
     # Fix FBEv1 decryption
     export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
-
+    
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
   	   export | grep "FOX" >> $FOX_BUILD_LOG_FILE

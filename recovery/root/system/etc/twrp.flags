@@ -26,7 +26,6 @@
 /system_ext	     erofs    system_ext                                                     flags=display="System_EXT";logical
 /odm		     ext4     odm                                                            flags=display="ODM";logical
 /odm		     erofs    odm                                                            flags=display="ODM";logical
-
 # System Partitions (Image)
 /system_image    emmc     /dev/block/bootdevice/by-name/system                           flags=backup=1;flashimg=1
 /vendor_image    emmc     /dev/block/bootdevice/by-name/vendor                           flags=backup=1;flashimg=1
@@ -60,4 +59,3 @@
 
 # System As Root (Needed for non-retrofit convert to retrofit)
 /system_root     ext4     /dev/block/bootdevice/by-name/system                           flags=display="System_Root"
-/system_root     erofs     /dev/block/bootdevice/by-name/system                          flags=display="System_Root"
