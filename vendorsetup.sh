@@ -18,7 +18,7 @@
 # 	Please maintain this if you use this script or any part of it
 #
 FDEVICE="cepheus"
-FOX_BUILD_DEVICE="$FDEVICE"
+FOX_BUILD_DEVICE ="$ FDEVICE"
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
