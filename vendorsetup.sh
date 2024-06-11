@@ -69,7 +69,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
     # ensure that /sdcard is bind-unmounted before f2fs data repair or format
     export OF_UNBIND_SDCARD_F2FS=1
-    
+    # ensure that /sdcard is bind-unmounted before mifs data repair or format
+    export OF_UNBIND_SDCARD_MIFS=1
+
     # Fix FBEv1 decryption
     export OF_FIX_DECRYPTION_ON_DATA_MEDIA=1
     
